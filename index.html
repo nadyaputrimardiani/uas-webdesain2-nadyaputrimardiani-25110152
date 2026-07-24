@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Mango - Smoothies & Jus Segar</title>
+    
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi SPA -->
+    <nav class="custom-navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">🥭 Hello Mango</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Beranda</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Buka keranjang">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Beranda (Hero) -->
+    <section id="home" class="hero page-section active-page">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="stamp">100% Buah Asli</span>
+            <h1>Hello Mango<br>Smoothies & Jus</h1>
+            <p>Minuman segar alami dari buah pilihan terbaik, tanpa pengawet, pewarna buatan, dan pemanis tambahan. Rasakan manisnya buah asli!</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn nav-link-btn">Lihat Menu Kami</a>
+                <a href="#tentang" class="btn btn-ghost nav-link-btn">Kenali Kami</a>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,90 L0,90 Z"></path></svg>
+        </div>
+    </section>
+
+    <!-- Section Menu -->
+    <section id="menu" class="menu page-section">
+        <div class="container">
+            <span class="eyebrow">Segar Setiap Hari</span>
+            <h2 class="section-title">Menu Favorit</h2>
+            <p class="section-sub">Pilih racikanmu, tambahkan ke keranjang, dan pesan langsung lewat WhatsApp.</p>
+
+            <!-- Filter Kategori -->
+            <div class="menu-filter text-center mb-4">
+                <button class="filter-btn active" data-filter="all">Semua Menu</button>
+                <button class="filter-btn" data-filter="smoothies">🥭 Smoothies</button>
+                <button class="filter-btn" data-filter="juice">🧃 Juice</button>
+                <button class="filter-btn" data-filter="dessert">🍮 Dessert</button>
+            </div>
+
+            <!-- Grid Kartu Menu -->
+            <div class="menu-grid" id="menuGrid">
+                
+                <!-- Smoothies -->
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Mangga" data-price="18000" data-img="mangga.JPG">
+                    <span class="ribbon">Terlaris</span>
+                    <div class="menu-img-wrap"><img src="mangga.JPG" alt="Smoothies Mangga" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Mangga</h3>
+                        <p>Mangga manis segar + susu murni + madu alami</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 18.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Naga Segar" data-price="17000" data-img="naga.jpg">
+                    <span class="ribbon">Terlaris</span>
+                    <div class="menu-img-wrap"><img src="naga.jpg" alt="Smoothies Naga" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Naga Segar</h3>
+                        <p>Buah Naga manis segar asli+tanpa gula tambahan</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 17.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Stroberi" data-price="19000" data-img="sotbry.jpg">
+                    <div class="menu-img-wrap"><img src="sotbry.jpg" alt="Smoothies Stroberi" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Stroberi</h3>
+                        <p>Stroberi segar + yogurt + es batu</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 19.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Alpukat" data-price="17000" data-img="alpikat.avif">
+                    <div class="menu-img-wrap"><img src="alpikat.avif" alt="Smoothies Alpukat" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Alpukat</h3>
+                        <p>Alpukat mentega asli + susu kental manis</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 17.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Coklat" data-price="16000" data-img="coklat.webp">
+                    <span class="ribbon ribbon-new">Baru</span>
+                    <div class="menu-img-wrap"><img src="coklat.webp" alt="Smoothies Coklat" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Coklat</h3>
+                        <p>Coklat segar + sedikit gula susu alami</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 16.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="smoothies" data-name="Smoothies Pisang" data-price="17000" data-img="picang.JPG">
+                    <div class="menu-img-wrap"><img src="picang.JPG" alt="Smoothies Pisang" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Smoothies Pisang</h3>
+                        <p>Pisang ambon + susu cokelat asli</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 17.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juice -->
+                <div class="menu-card" data-category="juice" data-name="Jus Jeruk" data-price="15000" data-img="jeruk.webp">
+                    <div class="menu-img-wrap"><img src="jeruk.webp" alt="Jus Jeruk" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Jus Jeruk</h3>
+                        <p>Jeruk segar pilihan, tanpa pemanis buatan.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 15.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="juice" data-name="Jus Semangka" data-price="15000" data-img="semangka.jpg">
+                    <div class="menu-img-wrap"><img src="semangka.jpg" alt="Jus Semangka" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Jus Semangka</h3>
+                        <p>Semangka merah segar dengan es batu.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 15.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="juice" data-name="Jus Melon" data-price="16000" data-img="melon.jpg">
+                    <div class="menu-img-wrap"><img src="melon.jpg" alt="Jus Melon" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Jus Melon</h3>
+                        <p>Melon manis segar dengan susu.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 16.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert -->
+                <div class="menu-card" data-category="dessert" data-name="Mango Pudding" data-price="18000" data-img="puding.jpg">
+                    <span class="ribbon ribbon-new">Baru</span>
+                    <div class="menu-img-wrap"><img src="puding.jpg" alt="Mango Pudding" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Mango Pudding</h3>
+                        <p>Puding mangga lembut dengan saus mangga.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 18.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" data-name="Mango Ice Cream" data-price="20000" data-img="ice.jpg">
+                    <div class="menu-img-wrap"><img src="ice.jpg" alt="Mango Ice Cream" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Mango Ice Cream</h3>
+                        <p>Es krim mangga dengan topping buah segar.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 20.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" data-name="Mango Cheesecake" data-price="25000" data-img="cake.jpg">
+                    <div class="menu-img-wrap"><img src="cake.jpg" alt="Mango Cheesecake" class="menu-img"></div>
+                    <div class="menu-body">
+                        <h3>Mango Cheesecake</h3>
+                        <p>Cheesecake lembut dengan topping mangga.</p>
+                        <div class="menu-footer">
+                            <span class="harga">Rp 25.000</span>
+                            <button class="add-btn" type="button"><i class="fas fa-plus"></i> Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang -->
+    <section id="tentang" class="tentang page-section">
+        <div class="container tentang-wrap">
+            <div class="tentang-gambar">
+                <img src="gambar 1.JPEG" alt="Suasana Hello Mango">
+                <span class="stamp stamp-alt">Sejak Pagi Buta</span>
+            </div>
+            <div class="tentang-teks">
+                <span class="eyebrow">Cerita Kami</span>
+                <h2>Tentang Hello Mango</h2>
+                <p>Kami adalah usaha lokal di Manyar yang menyajikan smoothies dan jus buah segar. Semua buah kami beli langsung dari petani lokal setiap pagi untuk menjaga kesegaran dan kualitas rasa.</p>
+                <p>Hello Mango berkomitmen hanya menggunakan bahan alami, tanpa pengawet, pewarna buatan, dan sirup instan. Setiap gelas dibuat khusus saat pesanan datang!</p>
+                <ul class="info-list">
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. Manyar Sakti, Panam</li>
+                    <li><i class="fas fa-clock"></i> Buka: 09.00 - 22.00 WIB</li>
+                    <li><i class="fas fa-check-circle"></i> 100% Halal & Higienis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak -->
+    <section id="kontak" class="page-section">
+        <div class="kontak-header">
+            <span class="eyebrow">Hubungi Kami</span>
+            <h2 class="section-title-light">Kontak & Lokasi</h2>
+            <p class="section-sub-light">Kami siap melayani Anda setiap hari!</p>
+        </div>
+        <div class="container">
+            <div class="kontak-container">
+                <!-- Google Maps -->
+                <div class="kontak-card">
+                    <h3>📍 Lokasi Hello Mango</h3>
+                    <iframe
+                        src="https://www.google.com/maps?q=Hello+Mango+Manyar+Pekanbaru&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <!-- Detail Info -->
+                <div class="kontak-card">
+                    <h3>Info & Pemesanan</h3>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0853-5529-8002</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/hellomango.pku?igsh=N3VkZWh0bnllcDF1" target="_blank" rel="noopener">
+                            @hellomango._.manyar
+                        </a>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hellomango@email.com">hellomango@email.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/6285355298002" target="_blank" rel="noopener">
+                            Pesan lewat WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Setiap hari <br>09.00 - 22.00 WIB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Hello Mango Manyar. Jangan Lupa Singgah.</p>
+    </footer>
+
+    <!-- Keranjang Belanja Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Keranjang belanja">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-basket"></i> Keranjangmu</h3>
+            <button class="cart-close" id="cartClose" aria-label="Tutup keranjang">&times;</button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <i class="fas fa-mug-hot"></i>
+            <p>Keranjangmu masih kosong.<br>Yuk pilih smoothies favoritmu!</p>
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cartTotal">Rp 0</span>
+            </div>
+            <button class="btn btn-whatsapp" id="checkoutBtn"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
+            <button class="cart-clear" id="cartClear">Kosongkan keranjang</button>
+        </div>
+    </aside>
+
+    <!-- Notifikasi Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
